@@ -106,8 +106,8 @@ class UserController {
                 return res.status(400).json({message: 'Не авторизован'})
             }
             const { id: userId } = jwt.verify(token, secret)
-            let { username, name, surname, phoneNumber, mail } = req.body
-            const updated = await UserService.update({ _id: userId, username, name, surname, phoneNumber, mail })
+            let { name, surname, phoneNumber, city } = req.body
+            const updated = await UserService.update({ _id: userId, name, surname, phoneNumber, city })
             res.status(200).json(updated)
         } catch (e) {
             console.log(e)

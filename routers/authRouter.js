@@ -10,7 +10,7 @@ authRouter.post('/loginByPhone', AuthController.loginByPhoneNumber)
 authRouter.post('/registration', [
     check('name', 'Имя не должен быть пустым').notEmpty(),
     check('surname', 'Фамилия не должен быть пустым').notEmpty(),
-    check('mail', 'Почта не должен быть пустым').notEmpty(),
+    check('city', 'Почта не должен быть пустым').notEmpty(),
     check('phoneNumber', 'Номер не должен быть пустым').notEmpty(),
     check('password', 'Пароль должен быть больше 3 и меньше 20').isLength({min: 3, max: 20}),
 ], AuthController.registration)
